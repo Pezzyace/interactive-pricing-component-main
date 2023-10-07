@@ -1,0 +1,31 @@
+@import 'colors';
+
+.section-three{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px 25px 40px;
+  align-items: center;
+  width: 100%;
+
+  div{
+    div{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 5px;
+
+      p{
+        color: $GBlue;
+      }
+    }
+  }
+  button{
+    padding: 10px 40px;
+    font-size: 600;
+    border-radius: 15px;
+    border: none;
+    color: $White;
+    background-color: $DDblue;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'colors';
+
+.pricing-container{
+  width: 35%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: $White;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+}

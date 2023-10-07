@@ -1,0 +1,46 @@
+@import 'colors';
+
+
+.section-one{
+  width: 100%;
+  padding: 50px 30px 0px 30px;
+
+ article{
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+
+  p{
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: $GBlue;
+  }
+
+  div{
+    display: flex;
+    align-items: center;
+
+    p{
+      font-weight: 800;
+      font-size: 22px;
+      color: $DDblue;
+
+      span{
+        color: $DDblue
+      }
+    }
+    span{
+      font-size: 10px;
+      letter-spacing: 3;
+      color: $GBlue;
+    }
+  }
+}
+  input{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
