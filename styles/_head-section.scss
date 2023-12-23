@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'media-quires';
 
 .head-section{
   display: flex;
@@ -14,9 +15,19 @@
     margin-bottom: 10px;
     font-weight: 800;
     color: $DDblue;
+
+    @include mobile{
+      font-size: 18px;
+    }
   }
   h3{
     font-size: 11px;
     color: $GBlue;
+    text-align: center;
+
+    @include mobile{
+      width: 50%;
+      margin-bottom: 40px;
+    }
   }
 }

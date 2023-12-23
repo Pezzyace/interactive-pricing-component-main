@@ -10,12 +10,14 @@
   <link rel="stylesheet" href="./styles/styless.css">
   <title>Frontend Mentor | Interactive pricing component</title>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
+    .attribution { font-size: 11px; text-align: center; margin-bottom: 30px;}
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-  <div class="abstract"></div>
+  <div class="abstract">
+    <img src="images/pattern-circles.svg" alt="">
+  </div>
   <section class="head-section">
     <h1>Simple, traffic-based pricing</h1>
     <h3>Sign-up for our 30-day trial. No credit card required.</h3>
@@ -23,21 +25,26 @@
   <section class="pricing-container">
     <div class="section-one">
       <article>
-        <p>100K Pageviews</p>
-        <div>
-          <p>$ <span> </span> </p>
-          <span> /month</span>
-        </div>
+        <p><span id="pageviews">100K</span> Pageviews</p>
+       
       </article>
-      <input type="range" name="" id="">
+      <input type="range" name="range" id="range" min="1" max="5" step="1" value="3">
+      <div>
+        <p>$<span id="amount">16.00 </span></p>
+        <span class="month" id="bill"> / month</span>
+      </div>
     </div>
     <div class="section-two">
       <p>Monthly Billing</p>
-      <label class="switch">
-        <input type="checkbox" id="mySwitch">
-        <span class="slider"></span>
-      </label>
-      <p class="year">Yearly Billing  <span>25% discount</span></p>
+      <div class="switch" id="toggle-btn">
+        <input type="checkbox" id="check" name="check">
+      </div>
+      <p class="year">Yearly Billing  
+        <span>
+          <span class="desktop-discount">25%discount</span> 
+          <span class="mobile-discount">-25%</span>
+        </span>
+      </p>
     </div>
     <div class="section-three">
       <div>
@@ -61,7 +68,8 @@
   </section>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/pezzyace">Peace Akaehomen</a>.
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

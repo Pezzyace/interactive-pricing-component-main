@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'media-quires';
 
 .section-two{
   display: flex;
@@ -8,66 +9,55 @@
   padding: 30px 30px 25px 30px;
   width: 100%;
 
+  @include mobile{
+    margin-top: 50px;
+  }
+
   .switch {
+    background-color: $LGB;
+    height: 25px;
+    width: 50px;
+    border-radius: 15px;
     position: relative;
-    display: inline-block;
-    width: 47px;
-    height: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  .switch input {
-    display: none;
-  }
-  
-  .slider {
-    position: absolute;
+    margin: 0 15px;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $LGBlue;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
-  }
+
+    @include mobile{
+      height: 20px;
+      width: 40px;
+      margin: 0 10px;
+    }
   
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  }
+  .switch input {
+    appearance: none;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-  }
+    background: $White;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
 
+    @include mobile{
+      width: 12px;
+      height: 12px;
+      top: 4px;
+    }
   
-  input:checked + .slider {
+  }
+  .switch:hover{
     background-color: $SoCyan;
   }
 
-  input:checked + .slider:hover {
-    background-color: $SoCyan;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px $PBlue;
-  }
-
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
   p{
     color: $GBlue;
+
+    @include mobile{
+      font-size: 10px;
+    }
+  
   }
   .year{
     margin-right: 10px;
@@ -81,12 +71,31 @@
       align-items: center;
       justify-content: center;
       color: $LRed;
-      background-color: $LGRed;
       padding: 2px 5px;
       border-radius: 15px;
       font-size: 8px;
-      width: 100%;
-      margin: 0 0 0 75px;
+      margin: 0 0 0 35px;
+
+      .desktop-discount{
+        position: absolute;
+        background-color: $LGRed;
+        left: 10px;
+
+        @include mobile{
+          display: none;
+          
+        }
+      }
+
+      .mobile-discount{
+        display: none;
+        background-color: $LGRed;
+
+        @include mobile{
+          display: inline-flex;
+          margin-left: 77px;
+        }
+      }
     }
   }
 }

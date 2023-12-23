@@ -1,10 +1,9 @@
 .section-one {
   width: 100%;
   padding: 50px 30px 0px 30px;
+  position: relative;
 }
 .section-one article {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   align-items: center;
   margin-bottom: 20px;
@@ -15,26 +14,60 @@
   letter-spacing: 1px;
   color: hsl(225, 20%, 60%);
 }
-.section-one article div {
+.section-one #range {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  background: linear-gradient(90deg, hsl(174, 77%, 80%), 50%, hsl(224, 65%, 95%) 50%);
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+.section-one #range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 35px;
+  height: 35px;
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-color: hsl(174, 86%, 45%);
+  background-position: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.section-one #range::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 10px hsl(174, 86%, 45%);
+  background-color: hsl(174, 86%, 45%);
+}
+.section-one div {
   display: flex;
   align-items: center;
+  gap: 5px;
+  position: absolute;
+  right: 30px;
+  top: 40px;
 }
-.section-one article div p {
+@media screen and (max-width: 660px) {
+  .section-one div {
+    position: absolute;
+    left: 50%;
+    margin-top: 18px;
+    transform: translateX(-50%);
+    top: 100px;
+  }
+}
+.section-one div p {
   font-weight: 800;
   font-size: 22px;
   color: hsl(227, 35%, 25%);
 }
-.section-one article div p span {
-  color: hsl(227, 35%, 25%);
-}
-.section-one article div span {
+.section-one div month {
   font-size: 10px;
   letter-spacing: 3;
   color: hsl(225, 20%, 60%);
-}
-.section-one input {
-  width: 100%;
-  margin-bottom: 10px;
 }
 
 .section-two {
@@ -45,53 +78,57 @@
   padding: 30px 30px 25px 30px;
   width: 100%;
 }
+@media screen and (max-width: 660px) {
+  .section-two {
+    margin-top: 50px;
+  }
+}
 .section-two .switch {
+  background-color: hsl(223, 50%, 87%);
+  height: 25px;
+  width: 50px;
+  border-radius: 15px;
   position: relative;
-  display: inline-block;
-  width: 47px;
-  height: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+@media screen and (max-width: 660px) {
+  .section-two .switch {
+    height: 20px;
+    width: 40px;
+    margin: 0 10px;
+  }
 }
 .section-two .switch input {
-  display: none;
-}
-.section-two .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: hsl(224, 65%, 95%);
-  transition: 0.4s;
-  border-radius: 34px;
-}
-.section-two .slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
+  background: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
 }
-.section-two input:checked + .slider {
+@media screen and (max-width: 660px) {
+  .section-two .switch input {
+    width: 12px;
+    height: 12px;
+    top: 4px;
+  }
+}
+.section-two .switch:hover {
   background-color: hsl(174, 77%, 80%);
-}
-.section-two input:checked + .slider:hover {
-  background-color: hsl(174, 77%, 80%);
-}
-.section-two input:focus + .slider {
-  box-shadow: 0 0 1px hsl(226, 100%, 87%);
-}
-.section-two input:checked + .slider:before {
-  transform: translateX(26px);
 }
 .section-two p {
   color: hsl(225, 20%, 60%);
+}
+@media screen and (max-width: 660px) {
+  .section-two p {
+    font-size: 10px;
+  }
 }
 .section-two .year {
   margin-right: 10px;
@@ -105,12 +142,30 @@
   align-items: center;
   justify-content: center;
   color: hsl(15, 100%, 70%);
-  background-color: hsl(14, 92%, 95%);
   padding: 2px 5px;
   border-radius: 15px;
   font-size: 8px;
-  width: 100%;
-  margin: 0 0 0 75px;
+  margin: 0 0 0 35px;
+}
+.section-two .year span .desktop-discount {
+  position: absolute;
+  background-color: hsl(14, 92%, 95%);
+  left: 10px;
+}
+@media screen and (max-width: 660px) {
+  .section-two .year span .desktop-discount {
+    display: none;
+  }
+}
+.section-two .year span .mobile-discount {
+  display: none;
+  background-color: hsl(14, 92%, 95%);
+}
+@media screen and (max-width: 660px) {
+  .section-two .year span .mobile-discount {
+    display: inline-flex;
+    margin-left: 77px;
+  }
 }
 
 .section-three {
@@ -120,11 +175,22 @@
   align-items: center;
   width: 100%;
 }
+@media screen and (max-width: 660px) {
+  .section-three {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .section-three div div {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-bottom: 5px;
+}
+@media screen and (max-width: 660px) {
+  .section-three div div {
+    justify-content: center;
+  }
 }
 .section-three div div p {
   color: hsl(225, 20%, 60%);
@@ -154,9 +220,21 @@
   font-weight: 800;
   color: hsl(227, 35%, 25%);
 }
+@media screen and (max-width: 660px) {
+  .head-section h1 {
+    font-size: 18px;
+  }
+}
 .head-section h3 {
   font-size: 11px;
   color: hsl(225, 20%, 60%);
+  text-align: center;
+}
+@media screen and (max-width: 660px) {
+  .head-section h3 {
+    width: 50%;
+    margin-bottom: 40px;
+  }
 }
 
 .pricing-container {
@@ -164,6 +242,8 @@
   position: relative;
   margin: 0 auto;
   margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 9px 10px 4px hsl(226, 100%, 87%);
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   display: flex;
@@ -171,6 +251,11 @@
   justify-content: center;
   flex-direction: column;
   z-index: 100;
+}
+@media screen and (max-width: 660px) {
+  .pricing-container {
+    width: 90%;
+  }
 }
 
 * {
@@ -181,20 +266,31 @@
 }
 
 body {
-  background-color: hsl(224, 65%, 95%);
+  background-color: white;
   z-index: 1;
 }
 
 .abstract {
+  background: url(../images/bg-pattern.svg) no-repeat;
+  background-size: cover;
+  width: 100%;
   position: absolute;
   top: 0;
-  height: 250px;
+  height: 300px;
   right: 0;
   left: 0;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 50px;
-  background-color: hsl(226, 100%, 87%);
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 70px;
+}
+.abstract img {
+  width: 100px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 660px) {
+  .abstract img {
+    margin-top: -88px;
+  }
 }/*# sourceMappingURL=styless.css.map */

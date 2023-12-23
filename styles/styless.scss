@@ -5,6 +5,8 @@
 @import 'media-quires';
 @import 'head-section';
 @import 'pricing-container';
+@import 'media-quires';
+
 
 *{
   margin: 0;
@@ -13,19 +15,30 @@
   font-family: 'Manrope', sans-serif;
 }
 body{
-  background-color: $LGBlue;
+  background-color: white;
   z-index: 1;
 }
 .abstract{
+  background: url(../images/bg-pattern.svg) no-repeat;
+  background-size: cover;
+  width: 100%;
   position: absolute;
   top: 0;
-  height: 250px;
+  height: 300px;
   right: 0;
   left: 0;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 50px;
-  background-color: $PBlue;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 70px;;
+
+  img{
+    width: 100px;
+    margin: 0 auto;
+    
+    @include mobile{
+      margin-top: -88px;
+    }
+  }
 }

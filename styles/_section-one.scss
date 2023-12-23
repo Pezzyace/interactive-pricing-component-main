@@ -1,46 +1,76 @@
 @import 'colors';
-
+@import 'media-quires';
 
 .section-one{
   width: 100%;
   padding: 50px 30px 0px 30px;
+  position: relative;
 
  article{
-  display: flex;
-  justify-content: space-between; 
   width: 100%;
   align-items: center;
   margin-bottom: 20px;
 
-  p{
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: $GBlue;
+    p{
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: $GBlue;
+    }
+  }
+  #range {
+    appearance: none;
+    width: 100%;
+    background: linear-gradient(90deg, $SoCyan, 50%, $LGBlue 50%);
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  #range::-webkit-slider-thumb {
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background-image: url('../images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-color: $StCyan;
+    background-position: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  #range::-webkit-slider-thumb:hover {
+    box-shadow: 0px 0px 10px $StCyan;
+    background-color: $StCyan;
   }
 
   div{
     display: flex;
     align-items: center;
+    gap: 5px;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+
+    @include mobile{
+      position: absolute;
+      left: 50%;
+      margin-top: 18px;
+      transform: translateX(-50%);
+      top: 100px;
+    }
 
     p{
       font-weight: 800;
       font-size: 22px;
       color: $DDblue;
-
-      span{
-        color: $DDblue
-      }
+    
     }
-    span{
+    month{
       font-size: 10px;
       letter-spacing: 3;
       color: $GBlue;
     }
-  }
-}
-  input{
-    width: 100%;
-    margin-bottom: 10px;
   }
 }
