@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Pezzyace/interactive-pricing-component-main)
-- Live Site URL: [Add live site URL here](https://interactive-pricing-component-main-phi.vercel.app/)
+- Solution URL: (https://github.com/Pezzyace/interactive-pricing-component-main)
+- Live Site URL: (https://interactive-pricing-component-main-phi.vercel.app/)
 
 
 ### Built with
